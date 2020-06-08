@@ -1,24 +1,10 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-require('dotenv').config()
-
-require('./configs/moongose.config')
-
-const app = express()
-
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json());
+const app = require("./app");
 
 
-app.get("/", (req, res) => {
-    res.json({
-        message: 
-        'Welcome to note taking app list'
-    })
-})
 
-app.use("/api/user", require('./routes/user.routes'))
+const port = process.env.PORT || 3000
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is listening on port 3000");
 });
+

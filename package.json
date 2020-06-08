@@ -4,7 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node",
+    "dev": "env-cmd ./configs/dev.env nodemon server.js",
+    "test": "env-cmd ./configs/test.env jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -22,5 +27,12 @@
     "express": "^4.17.1",
     "mongoose": "^5.9.18",
     "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "env-cmd": "^8.0.2",
+    "jest": "^26.0.1",
+    "mocha": "^7.2.0",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   }
 }
